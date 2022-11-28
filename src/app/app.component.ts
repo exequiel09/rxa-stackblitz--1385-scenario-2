@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   NgZone,
   Self,
@@ -19,10 +18,6 @@ import { EndpointService } from './endpoint.service';
   styleUrls: ['./app.component.css'],
   providers: [EndpointService],
   viewProviders: [RxEffects],
-
-  // Having this in the parent component doesn't work with Angular v14 and latest @rx-angular
-  // This works with Angular v13 + latest @rxangular
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   @ViewChild('sheetSlot', { static: false, read: ViewContainerRef })
